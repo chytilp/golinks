@@ -1,0 +1,15 @@
+endpointy:
+- authentication
+  -> registration
+  -> login
+- category
+  -> jen prihlaseni
+  -> create (nesmi byt uz stejny nazev)
+  -> put (ne) - jedine smazat a vytvorit novy
+
+link
+category
+user
+role
+misc
+
