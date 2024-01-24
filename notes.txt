@@ -4,12 +4,22 @@ endpointy:
   -> login
 - category
   -> jen prihlaseni
-  -> create (nesmi byt uz stejny nazev)
-  -> put (ne) - jedine smazat a vytvorit novy
+  -> create (nesmi byt uz stejny nazev) -> tj. cela hierarchie sport > fotbal > neco, 
+     programming > python > neco byt muzou
+  -> put (ne) - jedine smazat (kdyz je prazdny) a vytvorit novy
 
-link
-category
-user
+link - vsechno, delete jen kdyz nikdo nema referenci (jen prihlas. user a zadna role)
+
+user - user nemusi byt v zadne roli
+
 role
-misc
 
+misc(notes) - (link, user)
+
+mohla by byt stranka pro neprihlasene vyber linku podle kategorií a jejich hodnoceni
+
+Jak se budou posilat data?
+
+link: name, address, categoryId, 
+      z categoryId vytahnu z db Category object
+      user z prihlaseneho -> udelam object 

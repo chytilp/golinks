@@ -6,11 +6,12 @@ import (
     "github.com/gin-gonic/gin"
 
     "github.com/chytilp/golinks/model"
+    "github.com/chytilp/golinks/webmodel"
     "github.com/chytilp/golinks/helper"
 )
 
 func Register(context *gin.Context) {
-    var input model.AuthenticationInput
+    var input webmodel.AuthenticationInput
 
     if err := context.ShouldBindJSON(&input); err != nil {
         context.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
@@ -20,7 +21,6 @@ func Register(context *gin.Context) {
     user := model.User{
         Username: input.Username,
         Password: input.Password,
-        IsAdmin: false,
     }
 
     savedUser, err := user.Save()
@@ -34,7 +34,7 @@ func Register(context *gin.Context) {
 }
 
 func Login(context *gin.Context) {
-    var input model.AuthenticationInput
+    var input webmodel.AuthenticationInput
 
     if err := context.ShouldBindJSON(&input); err != nil {
         context.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
